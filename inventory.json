@@ -1,0 +1,10 @@
+{
+    "laptop": {
+        "Quantity": 2,
+        "Price": 150
+    },
+    "phone": {
+        "Quantity": 2,
+        "Price": 200
+    }
+}
