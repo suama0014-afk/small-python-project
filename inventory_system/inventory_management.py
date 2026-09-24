@@ -1,5 +1,8 @@
 import json
-FILENAME = "inventory.json"
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent
+FILENAME = BASE_DIR / "inventory.json"
 
 def read_file(filename:str) -> dict:
     try:
@@ -23,7 +26,6 @@ def write_on_file(filename:str,data:dict) -> bool:
         return False
 
 def add_product(inventory:dict, name:str, Quantity:int, price:int) -> bool:
-    inventory = read_file(FILENAME)
     inventory[name] = {"Quantity":Quantity,"Price":price}
     write_on_file(FILENAME,inventory)
     return True

@@ -2,5 +2,25 @@
     "phone": {
         "Quantity": 2,
         "Price": 150
+    },
+    "laptop": {
+        "Quantity": 1,
+        "Price": 300
+    },
+    "tablet": {
+        "Quantity": 1,
+        "Price": 100
+    },
+    "watch": {
+        "Quantity": 3,
+        "Price": 50
+    },
+    "iphone": {
+        "Quantity": 2,
+        "Price": 500
+    },
+    "samsunge": {
+        "Quantity": 2,
+        "Price": 350
     }
 }
