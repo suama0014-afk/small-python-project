@@ -1,4 +1,11 @@
 import csv
+import logging
+
+logging.basicConfig(
+                    filename='app.log',
+                    level= logging.INFO,
+                    format='%(asctime)s - %(levelname)s - %(message)s',
+                    datefmt='%Y-%m-%d %H:%M:%S')
 
 def save_to_csv(filename:str,expenses_list:list[dict]) -> bool:
     try:
@@ -10,7 +17,7 @@ def save_to_csv(filename:str,expenses_list:list[dict]) -> bool:
             writer.writerows(expenses_list)
             return True
     except FileNotFoundError:
-        print(f"No scv file name {filename}")
+        logging.error(f"File not found: {filename}")
         return False
 
 def read_from_csv(filename:str) -> list[dict]:
@@ -20,8 +27,8 @@ def read_from_csv(filename:str) -> list[dict]:
 
             return list(reader)
     except FileNotFoundError:
-        print(f"No csv file name {filename}")
+        logging.error(f"File not found: {filename}")
         return []
-    except UnicodeDecodeError as e:
-        print(f"Error reading file: {e}")
+    except UnicodeDecodeError :
+        logging.error(f"Reading file failed: {filename}")
         return []
