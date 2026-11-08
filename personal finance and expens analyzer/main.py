@@ -64,7 +64,7 @@ def validate(expens:dict) -> tuple[bool,str]:
     return len(errors) == 0, errors
     
 def add_expenses(expenses_list:list[dict]) -> bool:
-    date = datetime.datetime.now().strftime("%Y-%m-%d")  # noqa: DTZ005
+    date = datetime.datetime.now().strftime("%Y-%m-%d")  
     category = input("Enter the category of expenses: ").strip()
     while True:
         try:
